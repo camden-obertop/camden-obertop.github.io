@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkcamden_obertop_github_io"]=self["webpackChunkcamden_obertop_github_io"]||[]).push([[443],{4335:function(n,t,e){e.r(t),e.d(t,{default:function(){return h}});var u=e(3396);const a={class:"about"},o=(0,u._)("h1",null,"This is an about page",-1),r=[o];function i(n,t){return(0,u.wg)(),(0,u.iD)("div",a,r)}var c=e(89);const s={},b=(0,c.Z)(s,[["render",i]]);var h=b}}]);
-//# sourceMappingURL=about.1d52a015.js.map
