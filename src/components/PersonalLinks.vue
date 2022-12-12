@@ -1,5 +1,5 @@
 <template>
-  <div>Links</div>
+  <div class="text-h5">Links</div>
 </template>
 
 <script lang="ts">

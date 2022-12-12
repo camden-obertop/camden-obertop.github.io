@@ -1,15 +1,23 @@
 <template>
   <div>
     <!-- Navbar -->
-    <v-app-bar />
+    <v-app-bar>
+      <v-spacer />
+      <v-btn href="#about" link> About Me </v-btn>
+
+      <v-btn href="#projects" link> Projects </v-btn>
+
+      <v-btn text> Resume </v-btn>
+      <v-spacer />
+    </v-app-bar>
     <!-- Body -->
     <div class="siteBody">
       <!-- About Me -->
-      <AboutMe />
+      <AboutMe id="about" class="scrollTarget" />
       <!-- Links -->
       <PersonalLinks />
       <!-- Projects -->
-      <PersonalProjects />
+      <PersonalProjects id="projects" class="scrollTarget" />
     </div>
   </div>
 </template>
@@ -31,8 +39,18 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.scrollTarget {
+  scroll-margin-top: 100px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .siteBody {
-  margin-top: 5%;
+  margin-top: 2%;
   margin-left: 25%;
   margin-right: 25%;
 }

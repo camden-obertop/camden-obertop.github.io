@@ -7,7 +7,7 @@
         <!-- This v-card -->
         <v-card
           v-bind="props"
-          :elevation="isHovering ? 16 : 2"
+          :elevation="isHovering ? 24 : 2"
           color="#385F73"
           dark
         >
@@ -23,16 +23,18 @@
             </v-avatar>
 
             <!-- This div displays the title, text, and actions button -->
-            <div>
-              <v-card-title class="text-h5">
-                {{ project.title }}
-              </v-card-title>
+            <div class="d-flex flex-column justify-space-between">
+              <div>
+                <v-card-title class="text-h5">
+                  {{ project.title }}
+                </v-card-title>
 
-              <v-card-text>
-                <div class="text--primary">
-                  {{ project.description }}
-                </div>
-              </v-card-text>
+                <v-card-text>
+                  <div class="text--primary">
+                    {{ project.description }}
+                  </div>
+                </v-card-text>
+              </div>
 
               <v-card-actions>
                 <v-btn link :href="project.link.url" target="_blank">
