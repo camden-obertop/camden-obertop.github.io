@@ -1,12 +1,15 @@
 <template>
   <div>
-    <div class="text-h5 text-center">About Me</div>
     <div class="aboutSection">
-      <div>
-        <v-avatar class="ma-3" size="500" tile>
-          <v-img :src="require(`../assets/mario_real.png`)"></v-img>
+      <div class="d-flex flex-column align-center">
+        <v-avatar class="ma-3" size="300">
+          <v-img :src="require(`../assets/headshot.png`)"></v-img>
         </v-avatar>
-        <div class="text-center">It's a me</div>
+        <div class="px-5 text-center">
+          Hi there! My name is Camden Obertop. I currently work as a Junior
+          Software Developer for Northpoint Development in Kansas City,
+          Missouri.
+        </div>
       </div>
     </div>
   </div>

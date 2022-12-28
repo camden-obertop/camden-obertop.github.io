@@ -13,40 +13,47 @@
         >
           <!-- Adjust this div to be exactly correct -->
           <!-- Even numbered project indices show contents left aligned, while odd show more right aligned -->
-          <div
-            class="d-flex flex-no-wrap"
-            :class="evenProjectIndex ? 'justify-space-between' : ''"
-          >
+          <div class="d-flex flex-no-wrap">
             <!-- An avatar shows up to the left of the content if it has an odd project index -->
-            <v-avatar v-if="!evenProjectIndex" class="ma-3" size="200" tile>
-              <v-img :src="require(`../assets/${project.src}`)"></v-img>
+            <v-avatar class="ma-3 mr-1" :size="avatarSize" rounded="0">
+              <v-img
+                aspect-ratio="1"
+                cover
+                :src="require(`../assets/${project.src}`)"
+              ></v-img>
             </v-avatar>
 
             <!-- This div displays the title, text, and actions button -->
-            <div class="d-flex flex-column justify-space-between">
+            <div class="py-2 d-flex flex-column justify-space-between">
               <div>
-                <v-card-title class="text-h5">
+                <v-card-title class="pl-2 text-h5">
                   {{ project.title }}
                 </v-card-title>
 
-                <v-card-text>
+                <v-card-text class="pl-2 pb-0">
                   <div class="text--primary">
                     {{ project.description }}
                   </div>
                 </v-card-text>
               </div>
 
-              <v-card-actions>
-                <v-btn link :href="project.link.url" target="_blank">
-                  {{ project.link.text }}
-                </v-btn>
+              <v-card-actions v-if="project.links">
+                <div
+                  class="mr-5"
+                  v-for="(link, index) in project.links"
+                  :key="index"
+                >
+                  <v-btn
+                    link
+                    :href="link.url"
+                    target="_blank"
+                    variant="outlined"
+                  >
+                    {{ link.text }}
+                  </v-btn>
+                </div>
               </v-card-actions>
             </div>
-
-            <!-- An avatar shows up to the right of the content if it has an even project index -->
-            <v-avatar v-if="evenProjectIndex" class="ma-3" size="200" tile>
-              <v-img :src="require(`../assets/${project.src}`)"></v-img>
-            </v-avatar>
           </div>
         </v-card>
       </template>
@@ -58,24 +65,17 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "PersonalProject",
+  name: "ProjectCard",
   props: {
     project: {
       type: Object,
       required: true,
     },
-    projectIndex: {
-      type: Number,
-      required: true,
-    },
   },
-  mounted() {
-    console.log(this.project);
-  },
-  computed: {
-    evenProjectIndex() {
-      return this.projectIndex % 2 === 0;
-    },
+  data() {
+    return {
+      avatarSize: 200,
+    };
   },
 });
 </script>
