@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-    <div class="text-h5 text-center">{{ sectionName }}</div>
+    <div class="text-h3 text-center pb-3">{{ sectionName }}</div>
     <div>
       <ProjectCard
         v-for="(project, index) in projects"

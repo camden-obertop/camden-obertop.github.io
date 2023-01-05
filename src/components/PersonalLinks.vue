@@ -3,7 +3,10 @@
     <div class="icon-container" v-for="(link, index) in links" :key="index">
       <v-avatar size="large" rounded="0">
         <a :href="link.url" target="_blank" :title="link.title">
-          <v-img :src="require(`../assets/${link.src}`)"></v-img>
+          <v-img
+            class="link-image"
+            :src="require(`../assets/${link.src}`)"
+          ></v-img>
         </a>
       </v-avatar>
     </div>
@@ -48,5 +51,16 @@ a {
 .icon-container {
   padding-left: 25px;
   padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #242526;
+}
+.icon-container:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.icon-container:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>

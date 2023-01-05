@@ -1,51 +1,64 @@
 <template>
   <div class="home-container">
     <!-- Navbar -->
-    <v-app-bar>
+    <v-app-bar color="darker">
       <v-spacer />
-      <v-btn href="#about" link> About Me </v-btn>
+      <v-btn color="darker" href="#about" link> About Me </v-btn>
 
-      <v-btn href="#projects" link> Projects </v-btn>
+      <v-btn color="darker" href="#projects" link> Projects </v-btn>
 
-      <v-btn text> Resume </v-btn>
+      <v-btn color="darker" text> Resume </v-btn>
       <v-spacer />
     </v-app-bar>
     <!-- Body -->
-    <div class="siteBody">
-      <!-- About Me -->
-      <AboutMe id="about" class="scrollTarget" />
-      <!-- Links -->
-      <PersonalLinks />
-      <!-- Big Projects -->
-      <ProjectList
-        id="projects"
-        class="scrollTarget projectList"
-        section-name="Personal Projects"
-        :projects="ongoingProjects"
-      />
-      <!-- Game Jams and Hackathon Projects -->
-      <ProjectList
-        class="projectList"
-        section-name="Hackathon and Game Jam Projects"
-        :projects="jamProjects"
-      />
-      <!-- Game Jams and Hackathon Projects -->
-      <ProjectList
-        class="projectList"
-        section-name="School Projects"
-        :projects="schoolProjects"
-      />
-    </div>
+    <v-container>
+      <v-row no-gutters>
+        <v-col :cols="cols" :offset="offset">
+          <!-- About Me -->
+          <AboutMe id="about" class="scrollTarget" />
+          <!-- Links -->
+          <PersonalLinks />
+          <!-- Big Projects -->
+          <ProjectList
+            id="projects"
+            class="scrollTarget projectList"
+            section-name="Personal Projects"
+            :projects="ongoingProjects"
+          />
+          <!-- Game Jams and Hackathon Projects -->
+          <ProjectList
+            class="projectList"
+            section-name="Hackathon and Game Jam Projects"
+            :projects="jamProjects"
+          />
+          <!-- Game Jams and Hackathon Projects -->
+          <ProjectList
+            class="projectList"
+            section-name="School Projects"
+            :projects="schoolProjects"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useDisplay } from "vuetify";
 import AboutMe from "../components/AboutMe.vue";
 import PersonalLinks from "../components/PersonalLinks.vue";
 import ProjectList from "../components/ProjectList.vue";
 
 export default defineComponent({
+  setup() {
+    const { mobile } = useDisplay();
+
+    const cols = mobile ? 10 : 8;
+    const offset = mobile ? 1 : 2;
+
+    return { cols, offset, mobile };
+  },
   name: "HomeView",
   components: {
     AboutMe,
@@ -131,7 +144,7 @@ export default defineComponent({
           title: "camdenobertop.com",
           description:
             "I made this website using Vue and Vuetify.\
-            I wanted this website to a gallery of all the projects I've worked on in one convenient place.",
+            I wanted this website to be a gallery of all the projects I've worked on in one convenient place.",
           src: "headshot.png",
         },
       ],
@@ -265,11 +278,5 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.siteBody {
-  margin-top: 2%;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 </style>
