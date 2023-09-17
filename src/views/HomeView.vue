@@ -31,11 +31,11 @@
             section-name="Hackathon and Game Jam Projects"
             :projects="jamProjects"
           />
-          <!-- Game Jams and Hackathon Projects -->
+          <!-- Open Source Projects -->
           <ProjectList
             class="projectList"
-            section-name="School Projects"
-            :projects="schoolProjects"
+            section-name="Open Source Projects"
+            :projects="openSourceProjects"
           />
         </v-col>
       </v-row>
@@ -150,6 +150,50 @@ export default defineComponent({
       ],
       jamProjects: [
         {
+          title: "Skinny Gentleman: The 7 Sheets",
+          description:
+            "Skinny Gentleman is a horror comedy game made in Unity.\
+            It was a submission for GMTK Game Jam 2023, which took place in July of 2023.\
+            I worked primarily on programming and game design.",
+          src: "projectImages/skinny_gentleman.png",
+          links: [
+            {
+              text: "Play on itch.io",
+              url: "https://camdeno.itch.io/skinny-gentleman",
+            },
+          ],
+        },
+        {
+          title: "Culling Cards",
+          description:
+            "Culling Cards is a deck building rogue-like game made in Unity.\
+            It was a submission for Ludum Dare 53, which took place in April of 2023.\
+            The game received 49th place overall out of 2,309 entries.\
+            I worked primarily on game design and sprite art.",
+          src: "projectImages/culling_cards.png",
+          links: [
+            {
+              text: "Play on itch.io",
+              url: "https://camdeno.itch.io/culling-cards",
+            },
+          ],
+        },
+        {
+          title: "Barvest: The Iconic Bug Harvest of 2005",
+          description:
+            "Barvest is a 3D platformer game made in Unity.\
+            It was a submission for Ludum Dare 52, which took place in January of 2023.\
+            The game received 31st place overall out of 1,632 entries.\
+            I worked primarily on programming and level design.",
+          src: "projectImages/barvest.png",
+          links: [
+            {
+              text: "Play on itch.io",
+              url: "https://camdeno.itch.io/barvest",
+            },
+          ],
+        },
+        {
           title: "Critter Casino",
           description:
             "Critter Casino is a 2D tower defense game made in Unity.\
@@ -241,7 +285,7 @@ export default defineComponent({
           ],
         },
       ],
-      schoolProjects: [
+      openSourceProjects: [
         {
           title: "Pitivi",
           description:

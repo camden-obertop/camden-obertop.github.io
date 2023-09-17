@@ -9,11 +9,11 @@
           <v-row no-gutters>
             <v-col cols="10" offset="1">
               <div class="px-5 text-center">
-                Hi there! My name is Camden Obertop. I currently work as a
-                Junior Software Developer for Northpoint Development in Kansas
-                City, Missouri. As a full stack developer I help build dynamic
-                websites using primarily Vue.js. I enjoy working on video games
-                made in Unity and plan on making a whole lot more of them!
+                Hi there! My name is Camden Obertop. I work as a Software
+                Developer for Northpoint Development in Kansas City, Missouri.
+                As a full stack developer I help build dynamic websites using
+                primarily Vue.js. I enjoy working on video games made in Unity
+                and plan on making a whole lot more of them!
               </div>
             </v-col>
           </v-row>
