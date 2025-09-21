@@ -53,7 +53,7 @@ a {
   padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #242526;
+  background-color: #0f2936;
 }
 .icon-container:first-child {
   border-top-left-radius: 5px;

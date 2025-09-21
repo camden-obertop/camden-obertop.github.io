@@ -8,8 +8,7 @@
         <v-card
           v-bind="props"
           :elevation="isHovering ? 24 : 2"
-          color="darker"
-          dark
+          class="project-card"
         >
           <!-- Adjust this div to be exactly correct -->
           <!-- Even numbered project indices show contents left aligned, while odd show more right aligned -->
@@ -49,7 +48,9 @@
                     :href="link.url"
                     target="_blank"
                     variant="flat"
-                    color="dark"
+                    color="grey-lighten-2"
+                    rounded
+                    size="small"
                   >
                     {{ link.text }}
                   </v-btn>
@@ -60,7 +61,7 @@
         </v-card>
       </template>
     </v-hover>
-    <v-card v-else>
+    <v-card class="project-card" v-else>
       <!-- Adjust this div to be exactly correct -->
       <!-- Even numbered project indices show contents left aligned, while odd show more right aligned -->
       <v-img
@@ -87,7 +88,9 @@
               :href="link.url"
               target="_blank"
               variant="flat"
-              color="dark"
+              color="grey-lighten-2"
+              rounded
+              size="small"
             >
               {{ link.text }}
             </v-btn>
@@ -126,5 +129,8 @@ export default defineComponent({
 <style scoped>
 .project-image {
   border-radius: 5px;
+}
+.project-card {
+  background: #0f2936;
 }
 </style>

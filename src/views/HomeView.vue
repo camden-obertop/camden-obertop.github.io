@@ -1,15 +1,5 @@
 <template>
   <div class="home-container">
-    <!-- Navbar -->
-    <v-app-bar color="darker">
-      <v-spacer />
-      <v-btn color="darker" href="#about" link> About Me </v-btn>
-
-      <v-btn color="darker" href="#projects" link> Projects </v-btn>
-
-      <v-btn color="darker" text> Resume </v-btn>
-      <v-spacer />
-    </v-app-bar>
     <!-- Body -->
     <v-container>
       <v-row no-gutters>
@@ -69,6 +59,20 @@ export default defineComponent({
     return {
       ongoingProjects: [
         {
+          title: "cyber_serpent",
+          description:
+            "cyber_serpent is an arcade twin-stick shooter combined with snake.\
+            It started life as a game jam submission for Ludum Dare 54.\
+            For this game, I worked on programming and game design.",
+          src: "projectImages/cyber_serpent.png",
+          links: [
+            {
+              text: "View on Steam",
+              url: "https://store.steampowered.com/app/2667680/cyber_serpent/",
+            },
+          ],
+        },
+        {
           title: "Neural Nest",
           description:
             "Neural Nest is a game made in Unity that I have worked on with my team at Q-Bit Digital LLC.\
@@ -107,16 +111,12 @@ export default defineComponent({
             "Slime Slide is a mobile game where you play as a ball of slime rolling down an infinite tube.\
             The game was created in Unity. I worked on game design and programming.\
             I worked on this game with my friends Jaden Goter, Matt Lowe, and Erik Skoog.\
-            The game is available on both the Google Play Store and the Apple App Store.",
+            The game used to be available on both the Google Play Store and Apple App Store.",
           src: "projectImages/slime_slide.png",
           links: [
             {
-              text: "View on Google Play Store",
-              url: "https://play.google.com/store/apps/details?id=com.QBitDigitalLLC.SlimeSlideGame&hl=en_US&gl=US",
-            },
-            {
-              text: "View on Apple App Store",
-              url: "https://apps.apple.com/au/app/slime-slide/id1616745693",
+              text: "Watch gameplay",
+              url: "https://www.youtube.com/watch?v=JCR7R56LWVQ",
             },
           ],
         },
@@ -149,6 +149,34 @@ export default defineComponent({
         },
       ],
       jamProjects: [
+        {
+          title: "Wizard Jim's Gems",
+          description:
+            "Wizard Jim's Gems is a 2d platformer with a unique looping mechanic created in Unity.\
+            It was a submission for GMTK Game Jam 2025, which took place in July/August of 2025.\
+            I worked primarily on programming and game design.",
+          src: "projectImages/wizard_jim.png",
+          links: [
+            {
+              text: "Play on itch.io",
+              url: "https://gidzillo.itch.io/wizard-jims-gems",
+            },
+          ],
+        },
+        {
+          title: "Beegus and the Bugs",
+          description:
+            "Beegus and the Bugs is a tower defense strategy game made in Unreal Engine.\
+            It was a submission for GMTK Game Jam 2024, which took place in August of 2024.\
+            I worked primarily on game design, asset sourcing, and asset creation.",
+          src: "projectImages/beegus.png",
+          links: [
+            {
+              text: "Play on itch.io",
+              url: "https://gidzillo.itch.io/beegus-and-the-bugs",
+            },
+          ],
+        },
         {
           title: "Skinny Gentleman: The 7 Sheets",
           description:
@@ -308,6 +336,7 @@ export default defineComponent({
 <style scoped>
 .home-container {
   padding-bottom: 100px;
+  background: #091921;
 }
 
 .scrollTarget {

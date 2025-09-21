@@ -37,6 +37,6 @@ export default defineComponent({
 
 <style scoped>
 .projectDisplay:not(:first-of-type) {
-  margin-top: 3em;
+  margin-top: 1em;
 }
 </style>
